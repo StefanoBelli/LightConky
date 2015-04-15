@@ -39,6 +39,7 @@ Don't forget to visit my(I am not the owner): http://www.inthebit.it/
 
 # **Changelog** #
 Version 0.1
+
 -Intial release
 -Deleted GMail function as it is not working and not needed for now
 -Deleted mocp player as it is not working and not needed for now
