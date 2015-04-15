@@ -20,12 +20,11 @@ $USER is a bash variable that contains your account's name
 # *Getting the script* #
 
 CLI means "Command Line Interface"
-It is simple using Git CLI: "git clone https://github.com/StefanoBelli/LightConky"
-Getting latest version - from LightConky directory: "git pull"
-Ubuntu font is needed: Arch Linux User can get it by package communtiy/ttf-ubuntu-font-family
+- It is simple using Git CLI: "git clone https://github.com/StefanoBelli/LightConky"
+- Getting latest version - from LightConky directory: "git pull"
+- Ubuntu font is needed: Arch Linux User can get it by package communtiy/ttf-ubuntu-font-family
 What else? Ah...
-If your wireless / ethernet card is not 'wlp7s0' you can change it opening the script with a video text editor, searching 
-'wlp7s0' string, replacing it with what card are you currently using (eth0, enp9s0, wlan0 etc...)
+If your wireless / ethernet card is not 'wlp7s0' you can change it opening the script with a video text editor, searching 'wlp7s0' string, replacing it with what card are you currently using (eth0, enp9s0, wlan0 etc...)
 
 # *Developer* #
 I remind you that I am NOT original developer, this was an old script 
@@ -40,14 +39,14 @@ Don't forget to visit my(I am not the owner): http://www.inthebit.it/
 # **Changelog** #
 Version 0.1
 
--Intial release
--Deleted GMail function as it is not working and not needed for now
--Deleted mocp player as it is not working and not needed for now
--Deleted Calendar
--Added colors
--Added Kernel, Shell
--Added User name displaying
--Added Date and time displaying
--Edited something on Processes
--Changed font to Ubuntu (size:9)
+- Intial release
+- Deleted GMail function as it is not working and not needed for now
+- Deleted mocp player as it is not working and not needed for now
+- Deleted Calendar
+- Added colors
+- Added Kernel, Shell
+- Added User name displaying
+- Added Date and time displaying
+- Edited something on Processes
+- Changed font to Ubuntu (size:9)
  
