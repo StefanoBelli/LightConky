@@ -28,11 +28,9 @@ What else? Ah...
 You need to launch hddtemp daemon to see Disk temperature, else Conky says that hddtemp is not reachable, this because server is not launched and running.
 To launch hddtemp daemon:
 
-$ su -c "hddtemp -d /dev/device" 
-or
-$ sudo hddtemp -d /dev/device
-or
-# hddtemp -d /dev/device
+- $ su -c "hddtemp -d /dev/device"  - or -
+- $ sudo hddtemp -d /dev/device - or -
+- # hddtemp -d /dev/device
 
 Where $ is any user except root, and # is root, you don't need to include # or $ ; device is a device such as sda, sdb, sdc, sdd, and more... this should be your hard drive (dev device)
 
