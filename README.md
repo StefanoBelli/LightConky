@@ -19,6 +19,8 @@ $USER is a bash variable that contains your account's name
 
 # *Getting the script* #
 
+*Don't use with kde...*
+
 CLI means "Command Line Interface"
 - It is simple using Git CLI: "git clone https://github.com/StefanoBelli/LightConky"
 - Getting latest version - from LightConky directory: "git pull"
