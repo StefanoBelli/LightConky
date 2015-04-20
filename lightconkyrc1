@@ -85,7 +85,7 @@ Kernel: $alignr${exec uname -s -r}
 Textual Shell: $alignr${exec echo $SHELL}
 Hostname:$alignr$nodename
 Uptime:$alignr$uptime
-Desktop Environment: $alignr${exec echo $DESKTOP_SESSION}
+Desktop Environment: $alignr${exec echo $XDG_CURRENT_DESKTOP}
 RAM Usage: $alignr$mem/$memmax
 Percentage of using RAM: $alignr${memperc}%
 ${membar}
