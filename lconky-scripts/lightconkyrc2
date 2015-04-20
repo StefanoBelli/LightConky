@@ -1,3 +1,8 @@
+# Stefano Belli
+# Second Conky script
+# Will be placed on the top:left 
+# Read first script to read more
+# and README.md
 # ---WINDOW SPECS--- #
 background yes
 use_xft yes
