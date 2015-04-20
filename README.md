@@ -80,7 +80,7 @@ Don't forget to visit my(I am not the owner)blog: http://www.inthebit.it/
 - Changed Network section color to 'green'
 - Added some if-else statement for Operating System / Network Cards (eth0, enp9s0, wlan0, wlp7s0), so you don't need to change anything if your network card is identified as 'wlp7s0'
 - See commits to show more...
-- 
+
 **Version 0.3**
 - If-else statement removed from 'NETWORK' section as it is not working well, so you need to type your network card... a shell script is coming
 - Added lconky-scripts folder
@@ -91,6 +91,7 @@ Don't forget to visit my(I am not the owner)blog: http://www.inthebit.it/
    - Added User, Day, Time informations
    - Added various battery informations 
    - Added Rhythmbox Support
+ 
   *lightconkyrc1*
    - As previously said removed if-else statement
    - Fixed some syntax errors
