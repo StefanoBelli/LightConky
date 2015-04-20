@@ -16,6 +16,7 @@ $USER is a bash variable that contains your account's name
 
 - Move lightconkyrc in /home/$USER/.conkyrc directory [mv lightconkyrc ~/.conkyrc ]
 - Launch conky from /home/$USER [conky] or [conky .conkyrc]
+ [ **A shellscript is coming in next release to automatically install it, check if conky is installed and another to launch the script with some arguments [set.sh, lcinit.sh] (retarded starting time, network card) ** ]
 
 # *Getting the script* #
 
@@ -79,4 +80,18 @@ Don't forget to visit my(I am not the owner)blog: http://www.inthebit.it/
 - Changed Network section color to 'green'
 - Added some if-else statement for Operating System / Network Cards (eth0, enp9s0, wlan0, wlp7s0), so you don't need to change anything if your network card is identified as 'wlp7s0'
 - See commits to show more...
+- 
+**Version 0.3**
+- If-else statement removed from 'NETWORK' section as it is not working well, so you need to type your network card... a shell script is coming
+- Added lconky-scripts folder
+- Moved all except this file (README.md) to lconky-scripts/ 
+- Added another script: lightconkyrc2 
+  *lightconkyrc2*
+   - Added User, Day, Time informations
+   - Added various battery informations 
+   - Added Rhythmbox Support
+  *lightconkyrc1*
+   - As previously said removed if-else statement
+   - Fixed some syntax errors
+   -
  
