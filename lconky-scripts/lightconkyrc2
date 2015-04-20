@@ -1,0 +1,83 @@
+# ---WINDOW SPECS--- #
+background yes
+use_xft yes
+xftfont Ubuntu:size=9
+xftalpha 1
+update_interval 0.25
+total_run_times 0
+own_window yes
+own_window_transparent yes
+own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 200 300
+maximum_width 200
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color white
+default_shade_color black
+default_outline_color black
+alignment top_left
+gap_x 7
+gap_y 7
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+# ---WINDOW SPECS--- #
+
+# ---OUTPUT STARTS--- #
+#[!!] Do not edit if you don't know what you are doing. [!!] #
+TEXT
+
+#
+# +----+
+# |USER|
+# +----+
+#
+${color green}
+${alignc}USER
+${hr}
+Hello, $alignr${exec echo $USER} !
+Today is: $alignr${exec date +"%a %d/%m/%y"} 
+Hour: $alignr${exec date +"%H:%M"}
+
+${color fuschia}
+${alignc}BATTERY
+${hr}
+#
+# +-------+
+# |Battery|
+# +-------+
+#
+# Replace argument 'BAT1' with yours in /sys/class/power_supply/
+#
+Battery percentage: ${alignr}${battery_percent BAT1}
+${battery_bar BAT1} 
+${if_match "${battery_time BAT1}" == ""}Charge/Discharge time: ${alignr}unknown${else}${endif}${if_match "${battery_time BAT1}" != ""}Charge/Discharge time: ${alignr}${battery_time BAT1}${endif}
+${if_match "${acpiacadapter ACAD}" == "on-line" }Charging battery: ${alignr}yes${else}${endif}${if_match "${acpiacadapter ACAD}" == "off-line"}Charging battery: ${alignr}no${endif}
+Temperature: ${alignr}${acpitemp} C
+Fan state: ${alignr}${acpifan}
+
+#
+# +-----+
+# |Music|
+# +-----+
+#
+# Supports Rhythmbox player for now :)
+#
+${color grey}
+${alignc}Music
+${hr}
+Player Application: ${alignr}Rhythmbox
+Artist: ${alignr}${execi 60 rhythmbox-client --no-start %ta}
+Album: ${alignr}${execi 60 rhythmbox-client --no-start %at}
+Song: ${alignr}${execi 60 rhythmbox-client --no-start %tt}
+Album Genre: ${alignr}${execi 60 rhythmbox-client --no-start %ag}
+Time elapsed: ${alignr}${execi 1 rhythmbox-client --no-start %te}/${execi 1 rhythmbox-client --no-start %td}
+
+# [!!]Restoring default value[/!!]
+${color white}
+# ---OUTPUT ENDS--- #
