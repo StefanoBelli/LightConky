@@ -100,6 +100,7 @@ _**Version 1.0**
    - Jumped to 1.0
    - Added calendar
    - All should work :) 
+
   *Next release*
    - Launch script that helps you choose your network card 
 
