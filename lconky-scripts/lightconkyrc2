@@ -72,9 +72,9 @@ ${color grey}
 ${alignc}Music
 ${hr}
 Player Application: ${alignr}Rhythmbox
-Artist: ${alignr}${execi 60 rhythmbox-client --no-start %ta}
-Album: ${alignr}${execi 60 rhythmbox-client --no-start %at}
-Song: ${alignr}${execi 60 rhythmbox-client --no-start %tt}
+Artist: ${alignr}${exec rhythmbox-client --no-start %ta}
+Album: ${alignr}${exec rhythmbox-client --no-start %at}
+Song: ${alignr}${exec rhythmbox-client --no-start %tt}
 Album Genre: ${alignr}${execi 60 rhythmbox-client --no-start %ag}
 Time elapsed: ${alignr}${execi 1 rhythmbox-client --no-start %te}/${execi 1 rhythmbox-client --no-start %td}
 
