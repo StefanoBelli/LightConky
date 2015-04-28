@@ -70,7 +70,9 @@ TEXT
 # +-----------+
 # |SYSTEM INFO|
 # +-----------+
+# hddtemp daemon needed! 
 #
+
 ${color red}${alignc}SYSTEM INFO                                       
 ${hr}
 # *--* Start of OS Checking *--*

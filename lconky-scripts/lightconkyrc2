@@ -1,8 +1,3 @@
-# Stefano Belli
-# Second Conky script
-# Will be placed on the top:left 
-# Read first script to read more
-# and README.md
 # ---WINDOW SPECS--- #
 background yes
 use_xft yes
@@ -15,7 +10,7 @@ own_window_transparent yes
 own_window_type desktop
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
-minimum_size 200 300
+minimum_size 1000 300
 maximum_width 200
 draw_shades no
 draw_outline no
@@ -59,7 +54,7 @@ ${hr}
 #
 # Replace argument 'BAT1' with yours in /sys/class/power_supply/
 #
-Battery percentage: ${alignr}${battery_percent BAT1}
+Battery percentage: ${alignr}${battery_percent BAT1}%
 ${battery_bar BAT1} 
 ${if_match "${battery_time BAT1}" == ""}Charge/Discharge time: ${alignr}unknown${else}${endif}${if_match "${battery_time BAT1}" != ""}Charge/Discharge time: ${alignr}${battery_time BAT1}${endif}
 ${if_match "${acpiacadapter ACAD}" == "on-line" }Charging battery: ${alignr}yes${else}${endif}${if_match "${acpiacadapter ACAD}" == "off-line"}Charging battery: ${alignr}no${endif}
@@ -83,6 +78,19 @@ Song: ${alignr}${execi 60 rhythmbox-client --no-start %tt}
 Album Genre: ${alignr}${execi 60 rhythmbox-client --no-start %ag}
 Time elapsed: ${alignr}${execi 1 rhythmbox-client --no-start %te}/${execi 1 rhythmbox-client --no-start %td}
 
+#
+# +--------+
+# |CALENDAR|
+# +--------+
+#
+${color blue}
+${font DejaVu Sans Mono :size=9}${alignc}Calendar
+${hr}
+${font DejaVu Sans Mono:size=11}${alignc}${execpi 3600 cal | grep 201}
+${font DejaVu Sans Mono :size=13}${execpi 3600 DJS=`date +%_d`; cal | sed '1d' | sed '/./!d' | sed 's/$/ /' | fold -w 21 | sed -n '/^.\{21\}/p' | sed 's/^/ /' | sed /" $DJS "/s/" $DJS "/" "'${color #FF0000}'"$DJS"'${color blue}'" "/}
+
+
 # [!!]Restoring default value[/!!]
 ${color white}
 # ---OUTPUT ENDS--- #
+
