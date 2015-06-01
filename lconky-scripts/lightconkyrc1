@@ -143,6 +143,7 @@ ${downspeedgraph wlp7s0}
 Upload Speed:$alignr${upspeed wlp7s0} kb/s
 ${upspeedgraph wlp7s0}
 
+###UNCOMMENT BELOW IF THIS IS YOUR NETWORK CARD(wlan0)###
 #${endif}${if_up wlan0}\
 #Connected to: $alignr${wireless_essid wlan0}
 #AP MAC Address: $alignr${wireless_ap wlan0}
@@ -158,6 +159,7 @@ ${upspeedgraph wlp7s0}
 #Upload Speed:$alignr${upspeed wlan0} kb/s
 #${upspeedgraph wlan0}
 
+###UNCOMMENT BELOW IF THIS IS YOUR NETWORK CARD(eth0)###
 #${endif}${if_up eth0}\
 #Local IP [LAN]:$alignr${addr eth0}
 # # [!!] External IP updates itself every 12 hours, You can change the value to 3600 if you want that it updates every 1 hour
@@ -167,6 +169,7 @@ ${upspeedgraph wlp7s0}
 #Upload Speed:$alignr${upspeed eth0} kb/s
 #${upspeedgraph eth0}
 
+###UNCOMMENT BELOW IF THIS IS YOUR NETWORK CARD(enp9s0)###
 #${else}${endif}${if_up enp9s0}\
 #Local IP [LAN]:$alignr${addr enp9s0}
 # # [!!] External IP updates itself every 12 hours, You can change the value to 3600 if you want that it updates every 1 hour
