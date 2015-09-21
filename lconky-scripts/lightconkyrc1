@@ -1,41 +1,28 @@
-# 
 # Stefano Belli
-# Conky configuration file
-# (right one)
+# My Conky configuration file
+# As previously said (see ../README.md ) many things of this script are not mine
+#
+# !! NOW IS FIXED AND READY-TO-USE !!
+#
+# --> GitHub: <github.com/StefanoBelli/LightConky>
+# --> mailto: <stefano9913@gmail.com>
+# --> GooglePlus: <plus.google.com/+StefanoBelli>
+#
+# Tested:
+# DE: Looks great with Xfce :)
+# Screen Resolution: 1366x768 
+# GNU/Linux Distro: ArchLinux + 4.1.7 Kernel 
+#
+#
+# Original github repository: <github.com/StefanoBelli/LightConky>
+#
+# ... to update repo ... 
+# LightConky $ git pull
 # 
-# This is Copyleft <(C)
-# As said in README.md file this is not totally written from me.
-# See README.md for more infos
-#
-# You can fork this... If you want, you can specify my name and the link written in README.md
-#
-# Instructions written @ README.md file
-# see LightConky/ folder 
-# 
-# Contact me:
-#     --> GitHub: https://github.com/StefanoBelli
-#     --> GooglePlus: https://plus.google.com/+StefanoBelli
-#     --> mailto: stefano9913@gmail.com
-#
-#
-# Removed, it should be included in another conky config
-#
-# Better results in 1366x768 screen resolution with XFCE Desktop Environment
-# Tested on Arch Linux, wireless card name: wlp7s0
-# For Disk temperature: you should start hddtemp daemon service 
-# to do this: 
-#     su -c "hddtemp -d /dev/device"        ...or...
-#     sudo hddtemp -d /dev/device
-# where "device" is a device (*-.-*) such as sda, sdb, sdc, sdd, or 
-another...
-#
-#
-# TO DO:
-# - Improvements on this script.
-# ---WINDOW SPECS--- #
+########---PARAMS---########
 background yes
 use_xft yes
-xftfont Ubuntu:size=9
+xftfont Sans:size=8
 xftalpha 1
 update_interval 0.25
 total_run_times 0
@@ -45,45 +32,40 @@ own_window_type desktop
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
 minimum_size 200 200
-maximum_width 550
+maximum_width 240
 draw_shades no
 draw_outline no
 draw_borders no
 draw_graph_borders no
 default_color white
 default_shade_color black
-default_outline_color black
+default_outline_color white
 alignment top_right
-gap_x 7
-gap_y 7
+gap_x 12
+gap_y 12
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
 override_utf8_locale no
-# ---WINDOW SPECS--- #
 
-# ---OUTPUT STARTS--- [DO NOT EDIT HEADS] #
-TEXT 
+########---OUTPUT---########
+TEXT
 
 
-#
-# +-----------+
-# |SYSTEM INFO|
-# +-----------+
-# hddtemp daemon needed! 
-#
-
+#----------#
+#|SYSTEM  |#
+#----------#
 ${color red}${alignc}SYSTEM INFO                                       
 ${hr}
 # *--* Start of OS Checking *--*
-${if_match "${exec echo $OSTYPE }" == "linux-gnu"}Operating System: ${alignr}GNU ${else}Operating System: ${alignr}N/A ${endif}
+${if_match "${exec echo $OSTYPE }" == "linux-gnu"}Operating System: ${alignr}GNU/Linux ${else}Operating System: ${alignr}N/A ${endif}
 # *--* End of OS Checking *--*
 Architecture: $alignr${machine}
 Kernel: $alignr${exec uname -s -r}
 Textual Shell: $alignr${exec echo $SHELL}
 Hostname:$alignr$nodename
 Uptime:$alignr$uptime
-Desktop Environment: $alignr${exec echo $DESKTOP_SESSION}
+Desktop Environment: $alignr${exec echo $XDG_SESSION_DESKTOP}
 RAM Usage: $alignr$mem/$memmax
 Percentage of using RAM: $alignr${memperc}%
 ${membar}
@@ -98,11 +80,9 @@ ${swapbar}
 CPU usage:$alignr${cpu cpu0}%
 ${cpugraph}
 
-#
-# +---------+
-# |PROCESSES|
-# +---------+
-#
+#-----------#
+#|PROCESSES|#
+#-----------#
 ${color yellow}${alignc}PROCESSES 
 NAME $alignr PID      $alignr CPU Load
 ${hr}
@@ -116,15 +96,9 @@ ${top name 7} $alignr ${top pid 7}    $alignr ${top cpu 7}
 ${top name 8} $alignr ${top pid 8}    $alignr ${top cpu 8}
 ${top name 9} $alignr ${top pid 9}    $alignr ${top cpu 9}
 
-#
-# +-------+
-# |NETWORK|
-# +-------+
-# 
-# Replace wlp7s0 with your network card
-# (eth0, wlan0, enp9s0, etc...)
-# to make Network stats working 
-#
+#----------#
+#|NETWORKS|#
+#----------#
 ${color green}${alignc}NETWORK STATS
 ${hr}
 #
@@ -143,46 +117,8 @@ ${downspeedgraph wlp7s0}
 Upload Speed:$alignr${upspeed wlp7s0} kb/s
 ${upspeedgraph wlp7s0}
 
-###UNCOMMENT BELOW IF THIS IS YOUR NETWORK CARD(wlan0)###
-#${endif}${if_up wlan0}\
-#Connected to: $alignr${wireless_essid wlan0}
-#AP MAC Address: $alignr${wireless_ap wlan0}
-#Network Bitrate: $alignr${wireless_bitrate wlan0}
-#Signal quality: ${wireless_link_bar wlan0}
-#Quality percentage: $alignr${wireless_link_qual_perc wlan0}%
-#Wireless Card Mode: $alignr${wireless_mode wlan0} 
-#Local IP [LAN]:$alignr${addr wlan0}
-# # [!!] External IP updates itself every 12 hours, You can change the value to 3600 if you want that it updates every 1 hour
-#External IP [WAN]: $alignr${execi 43200 curl ipecho.net/plain; echo }
-#Download Speed:$alignr${downspeed wlan0} kb/s
-#${downspeedgraph wlan0
-#Upload Speed:$alignr${upspeed wlan0} kb/s
-#${upspeedgraph wlan0}
-
-###UNCOMMENT BELOW IF THIS IS YOUR NETWORK CARD(eth0)###
-#${endif}${if_up eth0}\
-#Local IP [LAN]:$alignr${addr eth0}
-# # [!!] External IP updates itself every 12 hours, You can change the value to 3600 if you want that it updates every 1 hour
-#External IP [WAN]: $alignr${execi 43200 curl ipecho.net/plain; echo }
-#Download Speed:$alignr${downspeed eth0} kb/s
-#${downspeedgraph eth0}
-#Upload Speed:$alignr${upspeed eth0} kb/s
-#${upspeedgraph eth0}
-
-###UNCOMMENT BELOW IF THIS IS YOUR NETWORK CARD(enp9s0)###
-#${else}${endif}${if_up enp9s0}\
-#Local IP [LAN]:$alignr${addr enp9s0}
-# # [!!] External IP updates itself every 12 hours, You can change the value to 3600 if you want that it updates every 1 hour
-#External IP [WAN]: $alignr${execi 43200 curl ipecho.net/plain; echo }
-#Download Speed:$alignr${downspeed enp9s0} kb/s
-#${downspeedgraph enp9s0}
-#Upload Speed:$alignr${upspeed enp9s0} kb/s
-#${upspeedgraph enp9s0}
-#${endif}
-
-# [!!]Restore default white color[!!]
+#[!!]Restoring default color[/!!]
 ${color white}
-# [/!!][/!!]
 
-# ---OUTPUT ENDS--- #
-# +++REFRESH: 0.25 ms+++ #
+#---OUTPUT ENDS---#
+#+++REFRESH: 0.25 ms+++#
