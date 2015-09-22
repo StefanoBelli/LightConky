@@ -8,6 +8,9 @@ Features:
 - Network graphs + IP + Download speed + Upload speed
 - Colorful as previously said
 
+# *Screenshot* #
+![conkyshot](conkyshot.png)
+
 This is an improvement of this:  
 http://crunchbang.org/forums/viewtopic.php?pid=45168#p45168
 
